@@ -68,6 +68,8 @@ class Solution(object):
         q = PriorityQueue()
         for l in lists:
             if l:
+                # 格式：q.put((数字,值))
+                #特点：数字越小，优先级越高,将数字作为优先级，那么就排好序了
                 q.put((l.val, l))
         while not q.empty():
             val, node = q.get()
