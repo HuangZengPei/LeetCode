@@ -9,7 +9,7 @@ class Solution(object):
         if divisor ==0:return None
         posdividend = True if dividend >=0 else False
         posdivisor = True if divisor > 0 else False
-        sign = posdivisor and posdividend
+        sign = posdivisor ^ posdividend # 异或
         res = 0
         count = 0
         dividend = abs(dividend)
