@@ -4,7 +4,7 @@ class Solution:
         result = ""
         while len(temp) > 0:
             lTemp = len(temp)
-            j = math.factorial(lTemp-1)
+            j = math.factorial(lTemp-1)  # 求阶乘
             t = math.ceil(k / j)-1
             k -= j*t
             result += temp[t]
