@@ -22,13 +22,6 @@ class Solution(object):
         
         # 添加p2漏掉的
         nums1[:p2+1] = nums2[:p2+1]
-<<<<<<< HEAD
-        
-        
-        
-        
-=======
->>>>>>> 8e8ae7ea95c22c7fd4df80b88749e196016bf139
 test = Solution()
 nums1 = [1,2,4,5,6,0]
 m = 5
