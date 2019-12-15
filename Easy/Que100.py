@@ -13,8 +13,8 @@ class Solution(object):
                 return 
             else:
                 list.append(p.val)
-                preOrder(p.left)
-                preOrder(p.right)
+                self.preOrder(p.left,list)
+                self.preOrder(p.right,list)
                 
     def isSameTree(self, p, q):
         """
