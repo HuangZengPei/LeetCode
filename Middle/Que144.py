@@ -25,7 +25,7 @@ class Solution(object):
         self.preOrder(root,res)
         return res
         
-    # 迭代写法
+    # 迭代写法,利用栈
     def preorderTraversal(self,root):
         if not root:
             return []
