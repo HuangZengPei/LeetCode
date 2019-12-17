@@ -1,14 +1,17 @@
+import math
+
 class Solution:
     def mySqrt(self, x: int) -> int:
-        mid = x //2
-        while mid > 0:
-            if mid*mid > x:
-                mid //= 2
+        l,r = 0,x
+        while l < r:
+            m = (l + r )//2
+            if m**2 <=x<(m+1)**2:
+                return m
+            elif m**2 < x:
+                l = m+1
             else:
-                break
-        if mid*mid == x:
-            return mid
-        else: return mid+1
+                r = m-1
+        return l
 
 test = Solution()
 print(test.mySqrt(5))
