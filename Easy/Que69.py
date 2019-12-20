@@ -1,3 +1,5 @@
+import math
+
 class Solution:
     def mySqrt(self, x: int) -> int:
         # 二分搜索求平方根
