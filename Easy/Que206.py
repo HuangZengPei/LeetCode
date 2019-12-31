@@ -20,15 +20,6 @@ class Solution(object):
             prev = curr
             curr = temp
         return prev
-        
-test = Solution()
-head = ListNode(1)
-head.next = ListNode(2)
-head.next.next = ListNode(3)
-head = test.reverseList(head)
-while head:
-    print(head.val)
-    head = head.next
             
             
             
