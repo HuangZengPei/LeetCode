@@ -10,20 +10,25 @@ class Solution(object):
         return self.binarySearch(nums,target,0,len(nums)-1)
         
     def binarySearch(self,nums, target, low, high):
-        if (low >= high):
-            if nums[low] == target:return True
-            else:return False
-        middle = low + (high - low)/2
-        if nums[middle] == target:
-            return True
-        if nums[low] == nums[middle]:low += 1
-        if nums[low] <= nums[middle]:
-            if nums[low] <= target and target <= nums[middle]:    # 在左边
-                return self.binarySearch(nums,target,low,middle-1)
+        while low <= high:
+            middle = low + (high - low)/2
+            if nums[middle] == target:
+                return True
+            if nums[low] == nums[middle]:
+                low += 1
+                continue
+            elif nums[middle] == nums[high]:
+                high -= 1
+                continue
+            if nums[low] <= nums[middle]:   # 左侧排好序递增
+                if nums[low] <= target and target <= nums[middle]:
+                    high = middle-1
+                else:
+                    low = middle+1
             else:
-                return self.binarySearch(nums,target,middle+1,high)
-        else:
-            if nums[middle] <= target and target <= nums[high]:
-                return self.binarySearch(nums,target,middle+1,high)
-            else:
-                return self.binarySearch(nums,target,low,middle-1)
+                if nums[middle] <= target and target <= nums[high]:
+                    low = middle + 1
+                else:
+                    high = middle -1
+        return False
+                    
