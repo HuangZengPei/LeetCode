@@ -20,10 +20,12 @@ class Solution(object):
         :rtype: int
         非动态规划
         """
-        minPirce = 3122314345
+        minPirce = prices[0]
         maxPro = 0
         length = len(prices)
-        for i in range(length):
-            minPrice = min(minPirce, prices[i])
-            maxPro = max(maxPro, prices[i] - minPirce)
+        for i in range(1,length):
+            if prices[i] < minPirce:
+                minPirce = prices[i]
+            elif maxPro < prices[i] - minPirce:
+                maxPro = prices[i] - minPirce
         return maxPro
