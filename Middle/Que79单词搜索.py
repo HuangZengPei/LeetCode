@@ -11,15 +11,6 @@ class Solution(object):
         if not board or not word :return False
         m = len(board)
         n = len(board[0])
-
-        marked = [[False for _ in range(n)] for _ in range(m)]
-        for i in range(m):
-            for j in range(n):
-                if backtrack(board,word,0,i,j,marked,m,n):
-                    return True
-        return False
-        
-        
         
         def backtrack(board,word,index,x,y,marked,m,n):
             # 递归终止条件
@@ -36,5 +27,16 @@ class Solution(object):
                         return True
                 marked[x][y] = False
             return False
+
+        marked = [[False for _ in range(n)] for _ in range(m)]
+        for i in range(m):
+            for j in range(n):
+                if backtrack(board,word,0,i,j,marked,m,n):
+                    return True
+        return False
+        
+        
+        
+        
                     
         
