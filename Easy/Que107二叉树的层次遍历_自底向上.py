@@ -29,3 +29,26 @@ class Solution:
             level = nextLevel.copy()
             nextLevel = []
         return res
+        
+    def levelOrderBottom(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        """
+        if not root:return []
+        def dfs(nodes,res):
+            if not nodes:return
+            next_level = []
+            node_values = []
+            for node in nodes:
+                if node.left:next_level.append(node.left)
+                if node.right:next_level.append(node.right)
+                node_values.append(node.val)
+            dfs(next_level,res)
+            res.append(node_values)
+            return res
+        
+        root_node = [root]
+        res = []
+        dfs(root_node,res)
+        return res
